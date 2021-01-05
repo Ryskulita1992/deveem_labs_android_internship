@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">deveem_labs_android_internship</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="price">Цена</string>
+    <string name="price_amount">price amount</string>
+    <string name="quantity">quantity</string>
+    <string name="item">item_title</string>
+    <string name="location">location</string>
+    <string name="views">просмотров</string>
+    <string name="date">Дата обновления</string>
+    <string name="call">Позвонить</string>
+    <string name="text">Написать</string>
+    <string name="from">от</string>
+    <string name="quantity_">/шт</string>
+</resources>
