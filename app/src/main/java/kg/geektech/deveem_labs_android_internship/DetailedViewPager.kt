@@ -1,29 +1,40 @@
 
 package kg.geektech.deveem_labs_android_internship
 
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
+import androidx.recyclerview.widget.RecyclerView
+import kg.geektech.deveem_labs_android_internship.databinding.ItemViewPagerBinding
 import kg.geektech.deveem_labs_android_internship.ui.Item
+import kg.geektech.youtubeparsing.extensions.inflateEx
+import kg.geektech.youtubeparsing.extensions.loadImage
 
-class DetailedViewPager(fragmentManager: FragmentManager, ):FragmentPagerAdapter(
-    fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
+class DetailedViewPagerAdapter():RecyclerView.Adapter<DetailedViewPagerAdapter.PagerVH>(
 ){
-    private val list = ArrayList<Item>()
-    private val mFragment = ArrayList<Fragment>()
+    lateinit var holder: PagerVH
 
 
 
-    override fun getCount(): Int {
-        return mFragment.size
+    class PagerVH(itemView: View): RecyclerView.ViewHolder(itemView) {
+        val binding = ItemViewPagerBinding.bind(itemView)
     }
 
-    override fun getItem(position: Int): Fragment {
-        return mFragment.get(position)
-    }
-    fun  addFragment(item: Item){
-        list.add(item)
+    private  var list : MutableList<Item> = mutableListOf()
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PagerVH {
+        val v = parent.inflateEx(R.layout.item_view_pager)
+        return PagerVH(v)    }
+
+    override fun onBindViewHolder(holder: PagerVH, position: Int) {
+        this.holder = holder
+        val item = list?.get(position)
+        holder.binding.imageViewPager.loadImage(item.toString())
+
+    }
+
+    override fun getItemCount(): Int {
+     return list?.size!!
     }
 
 

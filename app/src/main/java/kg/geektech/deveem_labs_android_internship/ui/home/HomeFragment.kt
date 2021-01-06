@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -14,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
-import kg.geektech.deveem_labs_android_internship.R
 import kg.geektech.deveem_labs_android_internship.MainPagerAdapter
+import kg.geektech.deveem_labs_android_internship.R
 import kg.geektech.deveem_labs_android_internship.databinding.FragmentHomeBinding
 import kg.geektech.deveem_labs_android_internship.ui.Item
 import kg.geektech.deveem_labs_android_internship.ui.agriculturalTech.AgriculturalTechFragment

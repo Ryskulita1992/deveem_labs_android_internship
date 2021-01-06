@@ -13,4 +13,12 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="toolBarDetailed" parent="ShapeAppearanceOverlay.MaterialComponents.MaterialCalendar.Window.Fullscreen">
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:background">@color/transparent</item>
+    </style>
+
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse">
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

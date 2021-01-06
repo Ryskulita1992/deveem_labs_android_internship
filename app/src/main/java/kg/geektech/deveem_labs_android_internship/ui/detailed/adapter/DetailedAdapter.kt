@@ -30,7 +30,7 @@ class DetailedAdapter() :
         this.holder = holder
         holder.bind(list[position])
         val item = list[position]
-        holder.binding.itemsImageView.loadImage(item.url)
+        holder.binding.itemsImageView.loadImage("")
         holder.binding.itemTitle.text=item.itemTitle
         holder.binding.itemPrice.text=item.itemsPrice.toString() +"  "+ item.currency
         holder.binding.price.text= "Цена"

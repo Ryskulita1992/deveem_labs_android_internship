@@ -33,7 +33,7 @@
         android:layout_height="70dp"
         android:layout_marginTop="30dp"
         app:tabIndicatorFullWidth="false"
-        android:textAlignment="viewStart"
+        android:textAlignment="center"
         app:layout_constraintTop_toTopOf="parent"
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/yellow"

@@ -30,7 +30,7 @@ class HomeAdapter(var onItemClick: (Item) -> Unit) :
         this.holder = holder
         holder.bind(list[position])
         val item = list[position]
-        holder.binding.itemsImageView.loadImage(item.url)
+        holder.binding.itemsImageView.loadImage(item.url1)
         holder.binding.itemTitle.text=item.itemTitle
         holder.binding.itemPrice.text=item.itemsPrice.toString() +"  "+ item.currency
         holder.binding.price.text= "Цена"
@@ -42,42 +42,19 @@ class HomeAdapter(var onItemClick: (Item) -> Unit) :
         }
     }
 
-    fun addItems(items: MutableList<Item>) {
-        list.addAll(items)
-        notifyDataSetChanged()
-    }
 
     fun addItem(item: MutableList<Item>) {
         this.list=item
     }
-
-    fun itemRemove(position: Int) {
-        list.removeAt(position)
-        notifyItemRemoved(position)
-        Log.v("DELETED_POSITION_AT", "$position")
-    }
-
-    fun add(list: Item) {
-
-
-    }
-
     inner class HomeVH(v: View) : RecyclerView.ViewHolder(v) {
         val binding = ItemHomeBinding.bind(v)
 
         init {
             itemView.setOnClickListener {
-
             }
-
         }
 
         fun bind(item: Item) {
-//            binding.itemDetailedImage.item_playlist_image.loadImage(item.snippet?.thumbnails?.medium?.url)
-//            binding.itemDetailedVideoTitle.item_video_title.text = item.snippet?.title
-            Log.e("TAG", "bind: ")
-
-
         }
     }
 }
