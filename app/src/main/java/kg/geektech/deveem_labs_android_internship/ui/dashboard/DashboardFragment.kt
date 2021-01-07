@@ -1,31 +1,42 @@
 package kg.geektech.deveem_labs_android_internship.ui.dashboard
 
+import android.content.ClipData
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
+import com.google.android.material.tabs.TabLayoutMediator
 import kg.geektech.deveem_labs_android_internship.R
+import kg.geektech.deveem_labs_android_internship.databinding.FragmentDashboardBinding
+import kg.geektech.deveem_labs_android_internship.ui.Item
+
 
 class DashboardFragment : Fragment() {
+    private var _binding: FragmentDashboardBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var dashboardViewModel: DashboardViewModel
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+    _binding = FragmentDashboardBinding.inflate(inflater, container, false)
+    val view = binding.root
+    return view
     }
-}
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        if (activity is AppCompatActivity) {
+            (activity as AppCompatActivity).setSupportActionBar(binding.toolbarBack)
+
+            binding.toolbarBack.title = ""
+        }
+    }
+
+    }
+

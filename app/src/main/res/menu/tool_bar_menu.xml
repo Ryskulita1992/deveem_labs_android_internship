@@ -4,17 +4,17 @@
 <item
     android:id="@+id/menu_favorites"
     android:title=""
-    app:showAsAction="always"
+    app:showAsAction="ifRoom"
     android:icon="@drawable/ic_vector_fav"/>
     <item
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_share"
         android:title=""
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         />
     <item
         android:title=""
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:id="@+id/menu_more"
         android:icon="@drawable/ic_more"/>
 

@@ -1,6 +1,9 @@
 package kg.geektech.deveem_labs_android_internship.ui.main
 
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -27,7 +30,13 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.tool_bar_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onBackPressed() {
         super.onBackPressed()
     }
+
 }

@@ -9,5 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FEA02F</color>
     <color name="yellowTool">#25FEA02F</color>
-    <color name="transparent">#00FE2F2F</color>
+    <color name="transparent">#1EFFFFFF</color>
+    <color name="colorBackground">#E2E2E2</color>
+
+
 </resources>

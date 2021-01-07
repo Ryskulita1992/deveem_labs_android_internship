@@ -1,5 +1,9 @@
 package kg.geektech.deveem_labs_android_internship.ui.home
 
+import android.graphics.Color
+import android.graphics.LinearGradient
+import android.graphics.RadialGradient
+import android.graphics.Shader
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -22,6 +26,7 @@ import kg.geektech.deveem_labs_android_internship.ui.agrobazaar.AgroBazaarFragme
 import kg.geektech.deveem_labs_android_internship.ui.buildMaterials.BuildMaterialsFragment
 import kg.geektech.deveem_labs_android_internship.ui.home.adapter.HomeAdapter
 import java.util.*
+
 
 const val POS = "pos"
 
@@ -57,6 +62,7 @@ class HomeFragment() : Fragment(R.layout.fragment_home) {
         return view
     }
 
+
     private fun initViews() {
         tabLayout = binding.tabLayoutViewPager
         viewPager = binding.viewPager
@@ -79,19 +85,21 @@ class HomeFragment() : Fragment(R.layout.fragment_home) {
         }
     }
 
+
     fun onClick(pos: Item) {
         var pos = pos
         val result = Bundle()
         result.putSerializable(POS, pos)
         if (findNavController().currentDestination?.id == R.id.navigation_home) {
             findNavController().navigate(R.id.action_navigation_home_to_navigation_detailed, result)
-            Log.e("TAG", "onClick: $result", )
+            Log.e("TAG", "onClick: $result")
         }
+
     }
 
     private fun setUpTabs() {
         val adapter = MainPagerAdapter(requireActivity().supportFragmentManager)
-        adapter.addFragment(AgroBazaarFragment(), "Агробазар")
+        adapter.addFragment(AgroBazaarFragment(), "Агробазар" )
         adapter.addFragment(AgriculturalTechFragment(), "Сельхоз техника")
         adapter.addFragment(BuildMaterialsFragment(), "Строительный атериал")
         viewPager.adapter = adapter
@@ -115,7 +123,8 @@ class HomeFragment() : Fragment(R.layout.fragment_home) {
                     arrayList?.forEach {
                         if (it.itemTitle!!.toLowerCase(Locale.getDefault()).contains(search))
                             displayList?.add(it)
-                        rv.adapter!!.notifyDataSetChanged() }
+                        rv.adapter!!.notifyDataSetChanged()
+                    }
                 } else {
                     displayList?.clear()
                     displayList?.addAll(arrayList!!)
@@ -125,6 +134,11 @@ class HomeFragment() : Fragment(R.layout.fragment_home) {
             }
 
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+            setAdapter()
     }
 
     override fun onDestroyView() {

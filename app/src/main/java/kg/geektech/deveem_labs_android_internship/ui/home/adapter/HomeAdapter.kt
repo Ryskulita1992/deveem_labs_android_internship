@@ -1,6 +1,5 @@
 package kg.geektech.deveem_labs_android_internship.ui.home.adapter
 
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,8 +8,9 @@ import kg.geektech.deveem_labs_android_internship.databinding.ItemHomeBinding
 import kg.geektech.deveem_labs_android_internship.ui.Item
 import kg.geektech.youtubeparsing.extensions.inflateEx
 import kg.geektech.youtubeparsing.extensions.loadImage
+import kotlin.reflect.KFunction1
 
-class HomeAdapter(var onItemClick: (Item) -> Unit) :
+class HomeAdapter(var onItemClick:(Item)-> Unit) :
     RecyclerView.Adapter<HomeAdapter.HomeVH>() {
     lateinit var holder: HomeVH
     private var list: MutableList<Item> = mutableListOf()
